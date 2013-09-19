@@ -1,9 +1,10 @@
 <%= form_for @post do |f| %>
   Title:</br>
-  <%= f.text_field :title %></br>
+  <%= f.text_field :title, class: 'title' %></br>
   Body:</br>
   <%= f.text_area :body, size: "60x12" %></br>
 
-  <%= f.submit (@post.persisted? ? 'Update post' : 'Create post') %>
+  <%= f.submit (@post.persisted? ? 'Update post' : 'Create post'), class: 'submit_btn' %>  </br>
+  <%= link_to "Home", posts_path, class: 'link' %>
 
 <% end %>	

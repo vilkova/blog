@@ -1,6 +1,6 @@
-<%= link_to @post.title, post_path(@post) %></br>
-Body: <%= @post.body %></br>
+<h2><%= link_to_unless_current @post.title, post_path(@post) %></h2>
+<%= simple_format @post.body %>
 
- <%= link_to 'Back', posts_path %>
- <%= link_to 'Edit', edit_post_path(@post) %>
- <%= link_to 'Delete', post_path(@post), method: :delete %>
+ <%= link_to 'Edit', edit_post_path(@post), class: 'submit_btn' %>
+ <%= link_to 'Delete', post_path(@post), method: :delete, class: 'submit_btn' %>  </br>
+ <%= link_to 'Home', posts_path, class: 'link' %>

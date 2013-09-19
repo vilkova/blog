@@ -1,7 +1,6 @@
 <% @posts.each do |post| %>
-  <%= link_to post.title, post_path(post) %></br>
-  Body: <%= post.body %></br>
+  <h2><%= link_to post.title, post_path(post), class: 'title link' %></br></h2>
+  <%= simple_format post.body %></br>
 <% end %>
 
-<!--<%= link_to "Create new post", new_post_path %>-->
-<%= button_to "Create new post", {action: "new"}, :method => :get %>
+    <%= button_to "Create new post", {action: "new"}, :method => :get, class: 'submit_btn' %>
