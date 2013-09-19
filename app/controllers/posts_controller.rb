@@ -1,4 +1,5 @@
-class PostsController < ApplicationController 
+class PostsController < ApplicationController
+
   def index
     @posts = Post.all 
   end
@@ -13,7 +14,7 @@ class PostsController < ApplicationController
   	if @post.update_attributes(post_params)
   		redirect_to posts_path
   	else 
-  		render :edit	
+  		render :edit
   	end	
   end
 
@@ -26,14 +27,14 @@ class PostsController < ApplicationController
   	@post.destroy
   	redirect_to posts_path
   end
-  
+
   def new
     @post = Post.new	
   end	
 
   def create
   	@post = Post.new(post_params)
-  	if @post.save 
+  	if @post.save!
   		redirect_to posts_path
   	else
   	  render new

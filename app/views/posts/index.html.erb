@@ -3,4 +3,5 @@
   Body: <%= post.body %></br>
 <% end %>
 
-<%= link_to "Create new post", new_post_path %>
+<!--<%= link_to "Create new post", new_post_path %>-->
+<%= button_to "Create new post", {action: "new"}, :method => :get %>
