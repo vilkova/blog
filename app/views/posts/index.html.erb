@@ -1,2 +1,6 @@
-<h1>Blog</h1>
-<% @posts.each do |post| %><%= post.title %></br><% end %>
+<% @posts.each do |post| %>
+  <%= link_to post.title, post_path(post) %></br>
+  Body: <%= post.body %></br>
+<% end %>
+
+<%= link_to "Create new post", new_post_path %>
